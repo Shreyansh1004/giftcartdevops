@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Fri May 15 22:47:41 IST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0172-1957-7068-000009a14560 
-on database directory /Users/abhashsingh/IdeaProjects/giftcartdevops/mydb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/Users/abhashsingh/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
-java.vendor=AdoptOpenJDK
-java.runtime.version=1.8.0_232-b09
-user.dir=/Users/abhashsingh/IdeaProjects/giftcartdevops
-os.name=Mac OS X
-os.arch=x86_64
-os.version=10.15.4
+Sat May 16 12:21:01 IST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0172-1c40-119b-000007d0fb08 
+on database directory /home/shreyansh/2nd semester/SPE/giftcartdevops/mydb with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/home/shreyansh/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_252-8u252-b09-1~18.04-b09
+user.dir=/home/shreyansh/2nd semester/SPE/giftcartdevops
+os.name=Linux
+os.arch=amd64
+os.version=5.3.0-40-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
