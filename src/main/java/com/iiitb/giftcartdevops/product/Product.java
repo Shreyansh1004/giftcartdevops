@@ -1,13 +1,16 @@
 package com.iiitb.giftcartdevops.product;
 
+import com.iiitb.giftcartdevops.Category.Category;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Product {
 
     @Id
-    private String id;
+    private String product_id;
     private String name;
     private String price;
     private String description;
@@ -15,29 +18,24 @@ public class Product {
     private String image;
     private String numItems;
 
-
+    @ManyToOne
+    private Category category;
 
     public Product() {
 
     }
 
-    public Product(String id, String name, String price, String description, String thumbnail, String image, String numItems) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.thumbnail = thumbnail;
-        this.image = image;
-        this.numItems = numItems;
+    public Product(String category_id) {
+       this.category=new Category(category_id,"","");
     }
 
-    public String getId() {
-        return id;
+
+    public String getProduct_id() {
+        return product_id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setProduct_id(String product_id) {
+        this.product_id = product_id;
     }
 
     public String getName() {
@@ -88,6 +86,11 @@ public class Product {
         this.numItems = numItems;
     }
 
+    public Category getCategory() {
+        return category;
+    }
 
-
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

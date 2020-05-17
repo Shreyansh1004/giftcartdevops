@@ -1,5 +1,6 @@
 package com.iiitb.giftcartdevops.product;
 
+import com.iiitb.giftcartdevops.address.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +16,9 @@ public class ProductService {
 
 
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts(String category_id){
         List<Product> products =new ArrayList<>();
-         productRepository.findAll().forEach(products::add);
+         productRepository.findByCategoryId(category_id).forEach(products::add);
          return products;
     }
 
@@ -37,4 +38,9 @@ public class ProductService {
     public void deleteProduct(String id) {
         productRepository.deleteById(id);
     }
+
+
+
+
+
 }
