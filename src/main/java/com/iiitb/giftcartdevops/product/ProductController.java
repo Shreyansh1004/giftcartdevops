@@ -16,6 +16,11 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @RequestMapping("/products")
+    public List<Product> getCompleteProductList(){
+        return productService.getCompleteProducts();
+    }
+
   @RequestMapping("/categories/{category_id}/products")
   public List<Product> getAllProducts(@PathVariable String category_id){
       return productService.getAllProducts(category_id);

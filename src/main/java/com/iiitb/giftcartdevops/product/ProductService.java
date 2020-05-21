@@ -1,6 +1,5 @@
 package com.iiitb.giftcartdevops.product;
 
-import com.iiitb.giftcartdevops.address.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +39,9 @@ public class ProductService {
     }
 
 
-
-
-
+    public List<Product> getCompleteProducts() {
+        List<Product> products=new ArrayList<>();
+        productRepository.findAll().forEach(products::add);
+        return products;
+    }
 }
