@@ -15,13 +15,13 @@ public class ProductService {
 
 
 
-    public List<Product> getAllProducts(String category_id){
+    public List<Product> getAllProducts(Integer category_id){
         List<Product> products =new ArrayList<>();
          productRepository.findByCategoryId(category_id).forEach(products::add);
          return products;
     }
 
-    public Optional<Product> getProduct(String id){
+    public Optional<Product> getProduct(Integer id){
         return productRepository.findById(id);
     }
 
@@ -29,12 +29,12 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    public void updateProduct(String id, Product product) {
+    public void updateProduct(Integer id, Product product) {
        productRepository.save(product);
     }
 
 
-    public void deleteProduct(String id) {
+    public void deleteProduct(Integer id) {
         productRepository.deleteById(id);
     }
 

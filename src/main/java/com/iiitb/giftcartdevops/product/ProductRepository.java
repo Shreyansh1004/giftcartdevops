@@ -4,7 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<Product,String> {
+public interface ProductRepository extends CrudRepository<Product,Integer> {
 
-    public List<Product>findByCategoryId(String id);
+    public List<Product>findByCategoryId(Integer id);
 }

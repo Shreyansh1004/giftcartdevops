@@ -2,5 +2,5 @@ package com.iiitb.giftcartdevops.Category;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface CategoryRepository extends CrudRepository<Category,String> {
+public interface CategoryRepository extends CrudRepository<Category,Integer> {
 }

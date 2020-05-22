@@ -18,7 +18,7 @@ public class CategoryController {
   }
 
   @RequestMapping("/categories/{category_id}")
-  public Optional<Category> getCategories(@PathVariable String category_id){
+  public Optional<Category> getCategories(@PathVariable Integer category_id){
       return categoryService.getCategory(category_id);
   }
 
@@ -29,13 +29,13 @@ public class CategoryController {
 
 
     @RequestMapping(method = RequestMethod.PUT,value = "/categories/{category_id}")
-    public void updateCategories(@RequestBody Category category, @PathVariable String category_id){
+    public void updateCategories(@RequestBody Category category, @PathVariable Integer category_id){
         categoryService.updateCategory(category_id,category);
     }
 
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/categories/{category_id}")
-    public void deleteCategories(@PathVariable String category_id){
+    public void deleteCategories(@PathVariable Integer category_id){
         categoryService.deleteCategory(category_id);
     }
 }

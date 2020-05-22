@@ -22,31 +22,31 @@ public class ProductController {
     }
 
   @RequestMapping("/categories/{category_id}/products")
-  public List<Product> getAllProducts(@PathVariable String category_id){
+  public List<Product> getAllProducts(@PathVariable Integer category_id){
       return productService.getAllProducts(category_id);
   }
 
   @RequestMapping("/categories/{category_id}/products/{id}")
-  public Optional<Product> getProduct(@PathVariable String id){
+  public Optional<Product> getProduct(@PathVariable Integer id){
       return productService.getProduct(id);
   }
 
   @RequestMapping(method = RequestMethod.POST,value = "/categories/{category_id}/products")
-  public void addProduct(@RequestBody Product product,@PathVariable String category_id){
+  public void addProduct(@RequestBody Product product,@PathVariable Integer category_id){
       product.setCategory(new Category(category_id,"",""));
       productService.addProduct(product);
   }
 
 
     @RequestMapping(method = RequestMethod.PUT,value = "/categories/{category_id}/products/{id}")
-    public void updateProduct(@RequestBody Product product,@PathVariable String category_id,@PathVariable String id){
+    public void updateProduct(@RequestBody Product product,@PathVariable Integer category_id,@PathVariable Integer id){
         product.setCategory(new Category(category_id,"",""));
         productService.updateProduct(id,product);
     }
 
 
     @RequestMapping(method = RequestMethod.DELETE,value = "/categories/{category_id}/products/{id}")
-    public void deleteProduct(@PathVariable String id){
+    public void deleteProduct(@PathVariable Integer id){
         productService.deleteProduct(id);
     }
 }

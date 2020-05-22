@@ -21,7 +21,7 @@ public class CategoryService {
          return categories;
     }
 
-    public Optional<Category> getCategory(String id){
+    public Optional<Category> getCategory(Integer id){
         return categoryRepository.findById(id);
     }
 
@@ -29,12 +29,12 @@ public class CategoryService {
         categoryRepository.save(category);
     }
 
-    public void updateCategory(String id, Category category) {
+    public void updateCategory(Integer id, Category category) {
        categoryRepository.save(category);
     }
 
 
-    public void deleteCategory(String id) {
+    public void deleteCategory(Integer id) {
         categoryRepository.deleteById(id);
     }
 }

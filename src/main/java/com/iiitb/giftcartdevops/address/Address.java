@@ -3,14 +3,12 @@ package com.iiitb.giftcartdevops.address;
 import com.iiitb.giftcartdevops.customer.Customer;
 //import com.project.giftkart.customer.Customer;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Address {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
     String street1;
     String street2;
