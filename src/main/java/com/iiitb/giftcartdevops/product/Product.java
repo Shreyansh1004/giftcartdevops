@@ -23,6 +23,11 @@ public class Product {
 
     }
 
+    public Product(Integer product_id, String s, String s1, String s2, String s3, String s4, String s5) {
+        this.product_id = product_id;
+
+    }
+
     public Double getPrice() {
         return price;
     }

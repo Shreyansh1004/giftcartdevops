@@ -34,7 +34,11 @@ public class CustomerService {
     }
     public void deleteCustomer(Integer id){
         customerRepository.deleteById(id);
+
     }
 
 
+    public Customer getCustomerByEmail(String email) {
+        return customerRepository.findByEmail(email);
+    }
 }

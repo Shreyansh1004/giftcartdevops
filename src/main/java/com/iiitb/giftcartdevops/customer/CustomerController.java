@@ -1,5 +1,6 @@
 package com.iiitb.giftcartdevops.customer;
 
+import com.iiitb.giftcartdevops.address.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,19 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    @RequestMapping(method = RequestMethod.POST, value = "/home/{email}/{password}")
+    public String getCustomerByEmail(@PathVariable String email,@PathVariable String password) {
+        Customer customer = customerService.getCustomerByEmail(email);
+        if(customer!=null) {
+            if (customer.password.compareTo(password) == 0)
+                return "True";
+            else
+                return "False";
+        }
+        else
+            return "False";
+    }
 
     @RequestMapping("/customer")
     public List<Customer> getCustomer() {
