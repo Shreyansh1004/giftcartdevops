@@ -13,17 +13,17 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/home")
-    public String getCustomerByEmail(@RequestBody Customer cust) {
-        Customer customer = customerService.getCustomerByEmail(cust.email);
+    @RequestMapping("/home/{email}/{password}")
+    public Customer getCustomerByEmail(@PathVariable  String email,@PathVariable String password) {
+        Customer customer = customerService.getCustomerByEmail(email);
         if(customer!=null) {
-            if (customer.password.compareTo(cust.password) == 0)
-                return "True";
+            if (customer.password.compareTo(password) == 0)
+                return customer;
             else
-                return "False";
+                return null;
         }
         else
-            return "False";
+            return null;
     }
 
     @RequestMapping("/customer")
